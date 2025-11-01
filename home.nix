@@ -219,9 +219,14 @@
 
    
    #rofi
-   home.file.".config/rofi/config.rasi".source = ./rofi/config.rasi;
-   home.file."~/.local/share/rofi/themes/rounded-nord-dark.rasi".source = ./rofi/themes/rounded-nord-dark.rasi;
+   home.file.".config/rofi" = {
+    source = ./rofi;
+    recursive = true;
+    executable = true;  
+   #home.file."~/.local/share/rofi/themes/rounded-nord-dark.rasi".source = ./rofi/themes/rounded-nord-dark.rasi;
    #home.file."~/.local/share/rofi/themes/rounded-common.rasi".source = ./rofi/themes/rounded-common.rasi;
+   };
+
 
    #waybar
    programs.waybar.enable = true;
