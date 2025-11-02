@@ -192,6 +192,7 @@
      ffmpeg
      axel
      vlc
+     nodejs_22
      ovh-ttyrec
      zsh
      zsh-completions
