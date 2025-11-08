@@ -26,6 +26,7 @@
      waybar
      pkgs.bilibili
      qq
+     osu-lazer
      zsh
      zsh-completions
      autojump
