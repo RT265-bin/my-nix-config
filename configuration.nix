@@ -272,6 +272,9 @@
     };
 
 
+  #enable xdg-menus
+  xdg.menus.enable = true;
+
 
 
   #enable thefuck
