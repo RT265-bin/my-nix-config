@@ -7,6 +7,8 @@
 
    home.packages = with pkgs;[
 
+
+     typora
      texliveFull
      texstudio
      pkgs.viu
@@ -27,6 +29,8 @@
      pkgs.bilibili
      qq
      osu-lazer
+     cataclysm-dda
+     nethack
      zsh
      zsh-completions
      autojump
@@ -127,7 +131,7 @@
 
 
    #dolphin conf
-   #home.file.".config/menus/applications.menus" = ./.config/menus/applications.menu;
+   home.file.".config/menus/applications.menu".source = ./.config/menus/applications.menu;
 
 
 
