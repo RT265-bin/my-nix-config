@@ -8,10 +8,15 @@
    home.packages = with pkgs;[
 
 
+     ttyper
+     gtypist
      typora
      texliveFull
      texstudio
      pkgs.viu
+     nomacs
+     libsForQt5.kate
+     glow
      pkgs.obs-studio
      mako
      mpvpaper
@@ -41,6 +46,7 @@
      wechat
      hmcl
      wofi
+     neohtop
      rofi
      #proton-ge-bin
      protontricks
@@ -156,6 +162,12 @@
 
    };
 
+  #nvim
+   home.file.".config/nvim" = {
+    source = ./.config/nvim;
+    recursive = true;
+    executable = true;  
+   };
 
 
 

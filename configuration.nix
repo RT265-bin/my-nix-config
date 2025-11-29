@@ -10,6 +10,34 @@
       ./hardware-configuration.nix
     ];
 
+
+  #ucode
+  hardware.cpu.intel.updateMicrocode = true;
+  #hardware.cpu.amd.updateMicrocode = true;
+
+  #gpu enable
+  hardware.graphics.enable = true;
+  hardware.graphics.extraPackages = with pkgs;[
+   intel-media-driver
+   intel-ocl
+   intel-vaapi-driver
+   ];
+
+
+  #amdgpu
+  #hardware.amdgpu.amdvlk.enable = true;
+  #services.xserver.videoDrivers = [
+  #"amdgpu"
+  #];
+  #hardware.amdgpu.legacySupport.enable = true;
+  #hardware.amdgpu.opencl.enable = true;
+  #services.frigate.vaapiDriver = [
+  #"radeonsi"
+  #];
+
+
+
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = false;
 
@@ -74,7 +102,7 @@
  environment.sessionVariables = rec {
      GTK_IM_MODULE = "fcitx";
      QT_IM_MODULE = "fcitx";
-     #XMODIFIERS= "@im" = "fcitx";
+     XMODIFIERS= "@im=fcitx";
      SDL_IM_MODULE = "fcitx";
      GLFW_IM_MODULE = "ibus";
     };  
@@ -90,6 +118,8 @@
        ll = "ls -l";
        update = "sudo nixos-rebuild switch";
        nixfetch = " fastfetch --logo ~/nixlogo.png";
+       vim = "nvim";
+       c = "clear";
      };
      #history.size = 10000;
    #zplug = {
@@ -164,11 +194,13 @@
   # You can use https://search.nixos.org/ to find more packages (and options).
    environment.systemPackages = with pkgs; [
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+     neovim
      wget
      alacritty
      fastfetch
      ntfs3g
      cava
+     xorg.libxshmfence
      btrfs-progs
      cmus
      firefox
