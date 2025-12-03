@@ -15,6 +15,7 @@
      texstudio
      pkgs.viu
      nomacs
+     kdePackages.gwenview
      libsForQt5.kate
      glow
      pkgs.obs-studio
@@ -59,6 +60,8 @@
      pkgs.cliphist
      libsForQt5.polkit-kde-agent
      pkgs.kdePackages.dolphin
+     xfce.thunar
+     kdePackages.ark
      pkgs.source-han-sans-vf-ttf
      pkgs.fira-code-symbols
      pkgs.nerd-fonts.hack
@@ -163,11 +166,11 @@
    };
 
   #nvim
-   home.file.".config/nvim" = {
-    source = ./.config/nvim;
-    recursive = true;
-    executable = true;  
-   };
+   #home.file.".config/nvim" = {
+    #source = ./.config/nvim;
+    #recursive = true;
+    #executable = true;  
+   #};
 
 
 
