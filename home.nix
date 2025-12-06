@@ -5,165 +5,21 @@
    
   
 
-   home.packages = with pkgs;[
-
-
-     ttyper
-     gtypist
-     typora
-     texliveFull
-     texstudio
-     pkgs.viu
-     nomacs
-     kdePackages.gwenview
-     libsForQt5.kate
-     glow
-     pkgs.obs-studio
-     mako
-     mpvpaper
-     #hyprpaper
-     hyprlock
-     pkgs.hyprshot
-     pkgs.hyprlang
-     pkgs.hyprgraphics
-     pkgs.hyprland-protocols
-     pkgs.hyprutils
-     pkgs.xdg-desktop-portal-hyprland
-     wlogout
-     fuzzel
-     waybar
-     pkgs.bilibili
-     qq
-     osu-lazer
-     cataclysm-dda
-     nethack
-     zsh
-     zsh-completions
-     autojump
-     zsh-autosuggestions
-     zsh-syntax-highlighting
-     zimfw
-     listen1
-     wechat
-     hmcl
-     wofi
-     neohtop
-     rofi
-     #proton-ge-bin
-     protontricks
-     #wine
-     xdg-user-dirs
-     xdg-utils
-     kdePackages.kservice
-     nnn
-     wl-clipboard
-     pkgs.cliphist
-     libsForQt5.polkit-kde-agent
-     pkgs.kdePackages.dolphin
-     xfce.thunar
-     kdePackages.ark
-     pkgs.source-han-sans-vf-ttf
-     pkgs.fira-code-symbols
-     pkgs.nerd-fonts.hack
-     #pkgs.fcitx5-rime
-     #pkgs.fcitx5
-     pkgs.xorg.xev
-     wineWowPackages.stable
-     #wine
-     #(wine.override { wineBuild = "wine64"; })
-     #wine64
-     #wineWowPackages.staging
-     winetricks
-     #pkgs.wineWowPackages.waylandFull
-     pkgs.protonup-ng
-     steam
-     imagemagick
-     fim
-     #jdk8
-     #jdk11
-     #jdk17
-     #jdk21
-     #jdk24
-     pkgs.swww
-   ];
-
-    #steam
-    #programs.steam ={
-      #enable = true;
-      #extest.enable = true;
-      #protontricks.enable = true;
-
-    #};
-
-
-
-
-   #config of git
-   programs.git = {
-     enable = true;
-     userName = "RT265-bin";
-     userEmail = "t2976376589@outlook.com";
-   };
+  imports = [
+  ./package/homepackage.nix
+  ./fcitx.nix
+  ./DE-WM/homehyprland.nix
+  ./users/git.nix
+  ./waybar.nix
+  ];
  
   programs.alacritty = {
   enable = true;
   };
 
 
-  #fcitx5
-   i18n.inputMethod = {
-       type = "fcitx5";
-       enable = true;
-       fcitx5.addons = with pkgs; [
-         fcitx5-gtk             # alternatively, kdePackages.fcitx5-qt
-         fcitx5-chinese-addons  # table input method support
-         fcitx5-nord            # a color theme
-         fcitx5-rime
-         fcitx5-pinyin-moegirl
-       ];
-     };
-
-
-
-
-
-  #programs.bash = {
-  #enable = true;
-  #enableCompletion = true;
-  #bashrcExtra = ''
-   #export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/go/bin"
-  #'';
- # };
-
-
-
-
-
    #dolphin conf
    home.file.".config/menus/applications.menu".source = ./.config/menus/applications.menu;
-
-
-
-   #fcitx5 config
-   home.file.".local/share/fcitx5" = {
-   source = ./.config/fcitx5;
-   recursive = true;
-   executable = true;  
-
-
-   };
-
-
-
-
-   #hypr cursors
-   home.file.".local/share/icons" = {
-   source = ./.config/icons;
-   recursive = true;
-   executable = true;  
-
-
-   };
 
   #nvim
    #home.file.".config/nvim" = {
@@ -185,38 +41,10 @@
     source = ./rofi;
     recursive = true;
     executable = true;  
-   #home.file."~/.local/share/rofi/themes/rounded-nord-dark.rasi".source = ./rofi/themes/rounded-nord-dark.rasi;
-   #home.file."~/.local/share/rofi/themes/rounded-common.rasi".source = ./rofi/themes/rounded-common.rasi;
    };
-
-
-   #waybar
-   programs.waybar.enable = true;
-   xdg.configFile."waybar/config.jsonc".source = ./waybar/config.jsonc;
-   xdg.configFile."waybar/style.css".source = ./waybar/style.css;
-  
-  #hyprland
-  programs.kitty.enable = true; # required for the default Hyprland config
-  home.file.".config/hypr" = {
-      source = ./hypr;
-      recursive = true;
-      executable = true;  
-  };
-  wayland.windowManager.hyprland.enable = true; # enable Hyprland
-  
-
 
   # Optional, hint Electron apps to use Wayland:
   # home.sessionVariables.NIXOS_OZONE_WL = "1";
-
-
-
-
-
-
-
-
-
 
 
 

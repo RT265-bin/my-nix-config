@@ -7,7 +7,6 @@
         #source
         nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
         daeuniverse.url = "github:daeuniverse/flake.nix";
-          hyprland.url = "github:hyprwm/Hyprland";
        #plugin_name = {
         #url = "github:/Alexays/Waybar/";
         #inputs.hyprland.follows = "hyprland"; # IMPORTANT

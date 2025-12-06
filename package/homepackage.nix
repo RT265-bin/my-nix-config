@@ -1,0 +1,84 @@
+
+{ config, pkgs, ... }: {
+
+ home.packages = with pkgs;[
+
+
+     ttyper
+     gtypist
+     typora
+     texliveFull
+     texstudio
+     pkgs.viu
+     nomacs
+     kdePackages.gwenview
+     libsForQt5.kate 
+     pkgs.obs-studio
+     mako         
+     mpvpaper
+     #hyprpaper
+     hyprlock
+     pkgs.hyprshot
+     pkgs.hyprlang
+     pkgs.hyprgraphics
+     pkgs.hyprland-protocols
+     pkgs.hyprutils
+     pkgs.xdg-desktop-portal-hyprland
+     wlogout
+     fuzzel
+     waybar
+     pkgs.bilibili
+     qq
+     osu-lazer
+     cataclysm-dda
+     nethack
+     zsh
+     zsh-completions
+     autojump
+     zsh-autosuggestions
+     zsh-syntax-highlighting
+     zimfw
+     listen1
+     wechat
+     hmcl
+     wofi
+     neohtop
+     rofi
+     #proton-ge-bin
+     protontricks
+     #wine
+     xdg-user-dirs
+     xdg-utils
+     kdePackages.kservice
+     nnn
+     wl-clipboard
+     pkgs.cliphist
+     libsForQt5.polkit-kde-agent
+     pkgs.kdePackages.dolphin
+     xfce.thunar
+     kdePackages.ark
+     pkgs.source-han-sans-vf-ttf
+     pkgs.fira-code-symbols
+     pkgs.nerd-fonts.hack
+     #pkgs.fcitx5-rime
+     #pkgs.fcitx5
+     pkgs.xorg.xev
+     wineWowPackages.stable
+     #wine
+     #(wine.override { wineBuild = "wine64"; })
+     #wine64
+     #wineWowPackages.staging
+     winetricks
+     #pkgs.wineWowPackages.waylandFull
+     pkgs.protonup-ng
+     steam
+     imagemagick
+     fim
+     #jdk8
+     #jdk11
+     #jdk17
+     #jdk21
+     #jdk24
+     pkgs.swww
+   ];
+}
